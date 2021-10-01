@@ -25,7 +25,7 @@ public class ConsultaComprasRecentesController {
     private TransacaoRepository transacaoRepository;
 
     @GetMapping
-    @RequestMapping("/cartoes/{id}/compras")
+    @RequestMapping("/cartoes/{id}/transacoes")
     public ResponseEntity<List<TransacaoDto>> consultaComprasRecentes(@PathVariable(name = "id") String idDoCartao) {
         cartaoRespository.findById(idDoCartao)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cartão não encontrado."));
